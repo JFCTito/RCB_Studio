@@ -2,12 +2,11 @@ import React from 'react'
 import HeaderTab from './HeaderTab'
 
 const Header = () => {
-const tabList = ["home", "services", "projects", "family", "contact"];
+const tabList = ['Home', 'Services', 'Projects', 'Family', 'Contact'];
     return (
     <div>
-        <img src="" alt="" />
         {tabList.map((tabName, index) => 
-            <HeaderTab title={tabName} cuenta={index}/>
+            <HeaderTab key={index} title={tabName} cuenta={index}/>
         )}
 
     </div>

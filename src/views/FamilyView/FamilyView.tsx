@@ -2,7 +2,7 @@ import React from 'react'
 
 const FamilyView = () => {
   return (
-    <div>FamilyView</div>
+    <div id='Family' style={{ height: '100vh', backgroundColor: 'blue'}}>FamilyView</div>
   )
 }
 
