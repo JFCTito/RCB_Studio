@@ -6,4 +6,5 @@
   --color-red: #d22e1c;
   --color-orange: #f08300;
   --color-black: #2e2d2c;
+  --spacing-screen-minus-header: calc(100vh - 80px);
 }

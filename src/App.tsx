@@ -10,11 +10,13 @@ function App() {
   return (
     <>
       <Header />
-      <HomeView />
-      <ServicesView />
-      <ProjectsView />
-      <FamilyView />
-      <ContactView />
+      <main className="pt-20">
+        <HomeView />
+        <ServicesView />
+        <ProjectsView />
+        <FamilyView />
+        <ContactView />
+      </main>
     </>
   );
 }

@@ -1,30 +1,36 @@
 import { useState } from 'react';
 import HeaderTab from './HeaderTab';
+import logo from '../../assets/logo_RCB.png';
+import { tabListMisc } from '../../const/misc';
 
 const Header = () => {
-  const tabList = ['Home', 'Services', 'Projects', 'Family', 'Contact'];
   const [activeTab, setActiveTab] = useState<string | null>(null);
-
-  const handleTabClick = (title: string) => {
-    console.log(`Clicked on ${title}`);
-    setActiveTab(title);
-    const titleView = document.getElementById(title);
+  const tabList = tabListMisc();
+  const handleTabClick = (id: string) => {
+    console.log(`Clicked on ${id}`);
+    setActiveTab(id);
+    const titleView = document.getElementById(id);
     if (titleView) {
-      titleView.scrollIntoView({ behavior: 'smooth' });
+      const yOffset = -80;
+      const y =
+        titleView.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 h-20 bg-white shadow text-black">
+    <header className="fixed w-full z-50 flex items-center justify-between px-6 h-20 bg-white shadow text-black">
       <div className="flex items-center gap-2">
-        <img src="/logo.png" alt="RCB Studio" className="h-10" />
+        <img src={logo} alt="RCB Studio" className="h-10" />
       </div>
 
       <nav className="flex gap-6">
-        {tabList.map((tabName, index) => (
+        {tabList.map((tab, index) => (
           <HeaderTab
             key={index}
-            title={tabName}
-            isActive={tabName === activeTab}
+            id={tab.id}
+            title={tab.name}
+            isActive={tab.id === activeTab}
             onClick={handleTabClick}
           />
         ))}

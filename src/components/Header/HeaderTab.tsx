@@ -3,7 +3,7 @@ import type { HeaderTabProps } from '../../ts/interfaces/headerTabProps';
 const HeaderTab = (headerTabProps: HeaderTabProps) => {
   return (
     <button
-      onClick={() => headerTabProps.onClick(headerTabProps.title)}
+      onClick={() => headerTabProps.onClick(headerTabProps.id)}
       className={`relative text-sm font-semibold px-4 py-2 transition-colors duration-200
         border-b-2
         ${
