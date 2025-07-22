@@ -1,9 +1,9 @@
-import React from 'react'
-
 const ServicesView = () => {
   return (
-    <div id= 'Services' style={{ height: '100vh', backgroundColor: 'orange'}}>ServicesView</div>
-  )
-}
+    <div id="Services" style={{ height: '100vh', backgroundColor: 'orange' }}>
+      ServicesView
+    </div>
+  );
+};
 
-export default ServicesView
+export default ServicesView;

@@ -1,4 +1,5 @@
 export interface HeaderTabProps {
-    title : string;
-    cuenta : number;
+  title: string;
+  isActive: boolean;
+  onClick: (title: string) => void;
 }
