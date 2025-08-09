@@ -5,15 +5,13 @@ const HeaderTab = (headerTabProps: HeaderTabProps) => {
     <button
       onClick={() => headerTabProps.onClick(headerTabProps.id)}
       className={`relative text-sm font-semibold px-4 py-2 transition-colors duration-200
-        border-b-2
-        ${
-          headerTabProps.isActive
-            ? 'text-orange-600 border-orange-600'
-            : 'text-gray-700 border-transparent'
-        }
-        hover:text-orange-600 hover:border-orange-600
+        ${headerTabProps.isActive ? 'text-orange-600' : 'text-gray-700'}
+        hover:text-orange-600 hover:cursor-pointer
       `}
     >
+      {headerTabProps.isActive && (
+        <div className='absolute -top-6 left-1/2 transform -translate-x-1/2 w-full h-3 bg-orange rounded-b-2xl'></div>
+      )}
       {headerTabProps.title}
     </button>
   );
