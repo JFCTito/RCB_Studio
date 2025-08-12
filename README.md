@@ -1,69 +1,55 @@
-# React + TypeScript + Vite
+# RCB Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sitio web profesional para RCB Studio, desarrollado con React y TypeScript.
 
-Currently, two official plugins are available:
+## 🚀 Despliegue Automático
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este proyecto está configurado con GitHub Actions para despliegue automático en GitHub Pages. Cada vez que se haga push a la rama `main`, el sitio se construirá y desplegará automáticamente.
 
-## Expanding the ESLint configuration
+### Configuración Requerida
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Habilitar GitHub Pages**:
+   - Ve a tu repositorio en GitHub
+   - Ve a `Settings` > `Pages`
+   - En `Source`, selecciona `GitHub Actions`
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. **Configurar Permisos**:
+   - Ve a `Settings` > `Actions` > `General`
+   - En `Workflow permissions`, selecciona `Read and write permissions`
+   - Marca la casilla `Allow GitHub Actions to create and approve pull requests`
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### URL del Sitio
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Una vez configurado, tu sitio estará disponible en:
+`https://[tu-usuario].github.io/RCB_Studio/`
+
+## 🛠️ Desarrollo Local
+
+```bash
+# Instalar dependencias
+pnpm install
+
+# Ejecutar en modo desarrollo
+pnpm dev
+
+# Construir para producción
+pnpm build
+
+# Vista previa de la build
+pnpm preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Estructura del Proyecto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- `src/components/` - Componentes reutilizables
+- `src/views/` - Vistas principales de la aplicación
+- `src/assets/` - Imágenes y recursos estáticos
+- `src/ts/interfaces/` - Interfaces TypeScript
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Tecnologías
+
+- React 19
+- TypeScript
+- Vite
+- CSS Modules
+- pnpm
