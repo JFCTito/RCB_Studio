@@ -1,4 +1,5 @@
 import './App.css';
+import styles from './App.module.css';
 import HomeView from './views/HomeView/HomeView';
 import ProjectsView from './views/ProjectsView/ProjectsView';
 import ServicesView from './views/ServicesView/ServicesView';
@@ -10,7 +11,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="pt-20">
+      <main className={styles.main}>
         <HomeView />
         <ServicesView />
         <ProjectsView />

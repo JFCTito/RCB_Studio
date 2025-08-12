@@ -1,8 +1,10 @@
+import styles from './FamilyView.module.css';
+
 const FamilyView = () => {
   return (
-    <div id='Family' style={{ height: '100vh', backgroundColor: 'pink' }}>
+    <div id='Family' className={styles.familyContainer}>
       FamilyView
-      <h1 className='text-3xl font-bold underline'>Hello world!</h1>
+      <h1 className={styles.title}>Hello world!</h1>
     </div>
   );
 };

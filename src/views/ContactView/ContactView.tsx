@@ -1,6 +1,8 @@
+import styles from './ContactView.module.css';
+
 const ContactView = () => {
   return (
-    <div id="Contact" style={{ height: '100vh', backgroundColor: 'red' }}>
+    <div id='Contact' className={styles.contactContainer}>
       ContactView
     </div>
   );
